@@ -1,0 +1,569 @@
+$Roboto: 'Roboto', sans-serif;
+
+/*colors*/
+$accent-red: #E74C3C;
+$green: #1abc9a;
+$accent: #52B3D9;
+$grey: #6C7A89;
+$iron: #DADFE1;
+$black: #424242;
+
+$bold: 700; 
+$light: 300; 
+$medium: 400; 
+$default: 16px;
+
+
+
+@function makelongshadow($color) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 20 {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+@mixin longshadow($color) {
+  text-shadow: makelongshadow($color);
+}
+
+*
+{
+font-family: $Roboto;
+}
+
+p
+{
+    font-size: $default;
+}
+
+body
+{
+
+
+//
+//
+//  background: -webkit-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Chrome 10+, Saf5.1+ */
+//  background:    -moz-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* FF3.6+ */
+//  background:     -ms-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* IE10 */
+//  background:      -o-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Opera 11.10+ */
+//  background:         linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* W3C */
+        
+        
+    
+  background: url("http://www.inkspotcreative.com/wp-content/uploads/2013/07/blurred-background-7.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+
+        
+        
+        
+        
+        
+        
+        
+}
+
+.first-panel {
+//    border: 1px solid $grey;
+    background-color: transparent;
+    
+}
+
+.second-panel {
+//    border: 2px solid $grey;
+    border-left: 2px solid $iron;
+    overflow-y: scroll;
+    
+}
+
+._panel {
+    min-height: 40em;
+    height: 45em;
+
+    
+}
+
+.app-container {
+    padding: 1em;
+}
+
+.time {
+//    border: 2px solid $grey;
+    height: 60%;
+}
+
+.notes {
+    border-top: 2px solid $iron;
+    height: 40%;
+}
+
+.outer-container {
+    margin-top: 2%;
+}
+
+.timer {
+    margin-top: 6em;
+}
+
+
+
+.completeBtn {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;    
+    
+    border: 2px solid white; 
+    background-color: transparent;
+    color: $green; 
+    letter-spacing:2px;
+    margin-right: 1px;
+    
+    &:hover
+    {
+        background-color: white;
+        color: $green;
+    }
+
+}
+
+.breakBtn {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    
+    border: 2px solid white; 
+    background-color: transparent;
+    color: $accent-red;
+    letter-spacing: 2px;
+    margin-right:1px;
+    
+    &:hover
+    {
+        background-color:white;
+        color: $accent-red; 
+    }
+}
+
+.missionList {
+    max-height: 40em;
+    overflow-y: scroll;
+    z-index: 0; 
+    width: 100%; 
+
+}
+
+.mission {
+    width:100%;
+    height:inherit;
+    
+
+}
+
+.tdMission {
+    width: 50%;
+    overflow-x: hidden;
+}
+
+.tdMissionBtns {
+    width: 50%;
+}
+
+.missionRow {
+   width:inherit;
+    border-bottom: 1px solid white;
+    
+}
+
+.notesArea {
+    width: 100%; 
+    height: 80%;
+    text-decoration: none;
+    outline: none;
+    border: 2px solid $iron;
+    background-color: transparent;
+}
+
+td
+{
+    padding-bottom: 1em;
+}
+.optionsBtn {
+
+}
+
+.timePanel {
+    height: 50%;
+
+}
+
+.optionsPanel {
+    height:30%;
+    margin-top: 1em;
+}
+
+.sliders {
+height: 60%;
+}
+
+#timeField {
+    font-size: 8em;
+    color: white;
+    width: 3em;
+//    border-left: 2px solid white;
+//    border-bottom: 2px solid white;
+//    border-right: 2px solid $iron;
+//    border-top: 2px solid $iron;
+    font-weight: $light;
+    @include longshadow(#BFBFBF);
+}
+
+.sign {
+    text-transform: lowercase;
+    font-size: 2em;
+}
+
+.signs {
+    padding-bottom:1em;
+}
+
+.title {
+    font-family: $Roboto;
+    color: white;
+    font-weight: $bold;
+    letter-spacing: 2px;
+
+}
+
+.missions-title {
+    color: white;
+    width: 6em;
+    margin: auto;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    border-right: 2px solid $iron;
+    border-top: 2px solid $iron;
+    margin-top: 1em;
+    margin-bottom:1em;
+    font-weight: $light;
+    letter-spacing: 2px;
+}
+
+.missionInput {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    text-decoration: none;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+input:focus
+{
+
+  outline:none;
+}
+
+.missions-title-container {
+
+
+}
+
+.addMission {
+
+}
+
+.white
+{
+color: white;
+}
+
+.btn {
+    margin-top: 10px;
+    
+}
+
+.missionName {
+    padding-left: 5px;
+    overflow-x: scroll;
+    color: $grey;
+    font-size: 1em;
+    letter-spacing: 2px;
+}
+
+.transparent
+{
+  background:#424242;
+  background:rgba(255,255,255,0.15);
+}
+
+.dark-transparent
+{
+      background:rgba(0,0,0,0.5);
+}
+
+.addButton {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+tr:hover
+{
+background-color: rgba(101, 198, 187, 0.4);
+cursor: pointer;
+}
+
+.startBtn {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    
+    -webkit-transition-property: background-color, color; 
+    
+    margin-top:2em;
+    background-color: transparent;
+    border: 2px solid white;
+    color:white;
+    font-size: 1.5em;
+    font-width: $light;
+    letter-spacing:2px;
+    padding-left:2em;
+    padding-right:2em;
+    text-decoration: none;
+    outline: none;
+    
+    &:hover
+    {
+        background-color: white;
+        color:$grey;
+    }
+    
+    &:focus
+    {
+        outline:none;
+    }
+    
+   
+    
+}
+
+.subtitle {
+    letter-spacing: 2px;
+    color:white;
+    font-weight: $light;
+}
+
+.saveButton {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    
+    background-color:transparent;
+    color: white;
+    font-weight: $light;
+    border-color: white;
+    font-size: 1em;
+    &:hover
+    {
+        background-color:white;
+        color: $grey;
+    }
+    
+}
+
+.lorem-block {
+    display: none;
+}
+
+#sign {
+    font-size: 4em;
+    color:white;
+    width: 4em;
+    font-weight: $bold;
+    text-transform: uppercase;
+    @include longshadow(#bfbfbf);
+}
+
+.signContainer {
+    margin-top:3em;
+
+}
+
+//.startBtn:hover
+//{
+//
+//}
+//
+//.startBtn:focus
+//{
+//    outline:none;
+//}
+
+.light {
+    font-weight: $light;
+}
+
+.smaller {
+    font-size: 0.5em;
+}
+
+.addMissionAlert {
+    color: white;
+    border: 2px solid white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.missionsCompleted {
+    display:none;
+    color: white;
+    font-size: 1.2em;
+}
+
+.viewCompletedBtn {
+    
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    
+    display:none;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    
+    &:hover
+    {
+        background-color:white;
+        color: $grey;
+    }
+    
+    &:focus
+    {
+        background-color:white;
+        color: $grey;
+        text-decoration:none;
+        outline:none;
+    }
+}
+
+.completeList {
+    display:none;
+    border: 2px solid white;
+    margin-top:1em;
+    padding-left: 5px;
+    padding-bottom: 3px;
+    
+
+}
+
+.border-bottom
+{
+    border-bottom:none;
+    margin-top: 1em;
+}
+
+.boxed {
+    border: 2px white solid;
+    width: 50%;
+    padding: 1em;
+}
+
+.bold {
+    font-weight: $bold;
+}
+
+.banner-welcome {
+    margin-top:5em;
+}
+
+.description {
+    width: 90%;
+
+    max-width: 500px;
+}
+
+.introSegment {
+    margin-top: 10em;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    padding: 1em;
+}
+
+.intro {
+    font-size: ($default)+1;
+    font-weight: $medium;
+   
+}
+
+.descriptionContainer {
+    max-width: 600px;
+    margin-top: 1em;
+}
+
+.bigTitle {
+//    @include longshadow(#BFBFBF);
+    font-size: 4em;
+}
+
+.black {
+    color: $black;
+}
+
+.goToApp {
+        -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;    
+    
+    margin-bottom: 5em;
+     background-color: $accent;
+    color: white;
+    font-size: 1.2em;
+    
+    &:hover
+    {
+        background-color: white;
+        color: $grey;
+    }
+    &:focus
+    {
+        text-decoration:none;
+        outline: none;
+    }
+}
+
+.goToApp-container {
+    margin-bottom: 3em;
+}
+
+
+
+.accent {
+    color: $accent;
+}
+
+.big {
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+
+.space {
+    letter-spacing: 2px;
+}

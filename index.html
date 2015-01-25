@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         
+    <!--CSS
+    -Bootstrap
+    -Animation
+    -Custom
+    -->
+    <link rel="stylesheet"  href="./CSS/bootstrap.css">
+    <link rel="stylesheet"  href="./CSS/prettify.css">
+    <link rel="stylesheet"  href="./CSS/animations.css">
+    <link rel="stylesheet" href= "./CSS/simplemodal.css">
+    <link rel="stylesheet" href="./CSS/sweet-alert.css">
+    <link rel="stylesheet"  href="./CSS/style.css">
+    
+    
+    <!--Google Fonts
+    - Roboto
+    - Poiret One
+    --> 
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <!--Javascript
+    - JQuery
+    -AngularJS
+    -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="./Javascript/sweet-alert.min.js"></script>
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>  
+
+<div ng-app="Sesh" class = "app-container">
+<div id = "app" class = "outer-container container-fluid">
+    <h2 class = "title"><span class = light>Light</span>Sesh <span class= "light smaller">(beta)</span ></h2>
+    <h5 class = "subtitle">The light-weight study framework</h5>
+    <div class = "row">
+        <div class = "transparent _panel first-panel  col-s-8 col-md-8">
+            <div ng-controller="TimeController as time" class = "row time">
+            <section class = "timePanel">
+                    <div align = center class = "timer">
+                        <h1 ng-model = "time" id = "timeField">30:00</h1>
+                        <button id = "startBtn" class = "startBtn btn" ng-click = "count()" onClick = "count()">Start Sesh</button>
+                        <div class = "signContainer">
+                            <h1  id = "sign" ng-model ="sign" >Study</h1>
+                        </div>
+                    </div>
+            </section>
+
+            </div>
+            <div class = "row notes">
+            <textarea class = "transparent notesArea" placeholder="Add your notes here.."></textarea><button class = "saveButton btn">Save</button>
+            </div>
+        </div>
+        <div ng-controller="MissionController as mission" class = "transparent _panel second-panel col-s-4 col-md-4">
+        <div class = "missions-title-container container-fluid">
+        <h3 class = "missions-title" align = center>Missions</h3>
+        </div>
+        <section class = "missionList">
+            <table class = "mission">
+                <tr ng-repeat = "m in missionList" class = "missionRow">
+                <td class = "tdMission">
+                 <h5 class = "missionName">{{m}}</h5>   
+                </td>
+                <td align = right class = "tdMissionBtns">
+                 <button ng-click = "complete($index)" class = "btn completeBtn">Complete</button><button ng-click = "break($index)" class = "btn breakBtn">X</button>   
+                </td>
+                </tr>
+            </table>
+
+        </section>
+        <div align = center class = "addMission">
+            <input ng-model = "mission" ng-keypress="($event.which === 13)?addMission(mission):0" class = "missionInput" placeholder = "Add a Mission and Press <Enter>" type = "text">
+            </input>
+<!--            <button class = "btn addButton"  ng-Enter = "test()" ng-click = "addMission(mission)">(+)</button>-->
+        </div>
+        <section>
+            <div>
+            <p align = center class = "missionsCompleted">Missions completed: {{missionsCompleted}}/{{missionAmt}}</p>
+            <h5 class = "floating addMissionAlert" align = center>Add some missions to get started!</h5>
+            </div>
+            <div align = center>
+            <button ng-click = "viewList()" id = "viewBtn" class = "btn viewCompletedBtn">View Completed Missions</button>
+            </div>
+            <div class = "completeList">
+                <p class = "white" ng-show = "noneComplete">You have not completed any missions yet.</p>
+                <li class = "white border-bottom" ng-repeat = "m in completeList">{{m}}</li>
+            </div>
+        </section>
+        </div>
+    </div>
+</div>
+    
+<div ng-controller = "IntroController as intro" align = center id = "startUp" class = "container-fluid">
+    <div class = "transparent row descriptionContainer">
+        <div class = "col-xs-12 banner-welcome">
+        <h1 class = "bigTitle white space light">Light<span class = "bold">Sesh</span></h1>
+        </div>
+        <div align = center class = "description">
+        <br></br> 
+        <section class = "introSegment" id = "intro1">
+        <p align = left class = "intro white">LightSesh is a study framework designed to help students budget their time and focus on their tasks one at a time.  </p>
+        <br></br>    
+        <p class = "intro white" align = left>LightSesh uses a 30 minute countdown timer that is divided into three sections in order to boost productivity:<br></br></p>
+        <span align = center class = "accent bold big">Study. Review. Break.</span>
+        <br></br> 
+        <p align = left class = "intro white">You can add what you need to work on to the "Missions" panel. Also, if needed, you can take notes in the "Notes" panel.</p>
+
+        </section>
+        <br/>
+        <div class = "goToApp-container">
+        <button ng-click = "goToApp()" class ="btn goToApp">Get Started</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+</body>
+
+<footer>
+    <script src = "./Javascript/countdown.js"></script>
+    <script src = "./Javascript/app.js"></script>
+    <script src = "./Javascript/main.js"></script>
+    
+</footer>
+
+</html>
