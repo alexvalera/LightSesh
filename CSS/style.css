@@ -355,4 +355,9 @@ tr:hover {
 .space {
   letter-spacing: 2px; }
 
+.footer {
+  width: 100%;
+  background-color: transparent;
+  color: white; }
+
 /*# sourceMappingURL=style.css.map */
