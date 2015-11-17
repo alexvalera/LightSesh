@@ -54,7 +54,7 @@
 
             </div>
             <div class = "row notes">
-            <textarea class = "transparent notesArea" placeholder="Add your notes here.."></textarea><button class = "saveButton btn">Save</button>
+            <div contenteditable= "true" class = "transparent notesArea" id = "userNotes" placeholder="Add your notes here.."></div><button onclick="saveNotes()" class = "saveButton btn">Save</button>
             </div>
         </div>
         <div ng-controller="MissionController as mission" class = "transparent _panel second-panel col-s-4 col-md-4">

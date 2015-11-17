@@ -1,3 +1,4 @@
+
 var app = angular.module('Sesh', []); 
 
 app.controller('IntroController', function($scope)
@@ -189,4 +190,5 @@ function goToApp()
         $('#app').fadeIn(300);
     });
 }
+
 
