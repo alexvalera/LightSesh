@@ -30,8 +30,10 @@ function checkCookie() {
     if (user != "") {
         $('#startUp').hide();
         $('#sign').hide();
+        
         document.getElementById('userNotes').innerHTML = notes;
         $('#app').fadeIn(1000);
+         
         
         
     } else { //never visited site, no cookie
@@ -44,6 +46,7 @@ function checkCookie() {
            $('#startUp').fadeIn(1000);
             $('#app').hide();
            $('#sign').hide();
+            
        }
     }
 }
@@ -70,10 +73,22 @@ var seconds = 1799; //30 minutes
 function saveNotes()
 {
 //    alert("save button hit");
+    $('#saveAlert').fadeIn(1000);
+    document.getElementById('saveAlert').innerHTML = "Your notes have been saved.";
+    setTimeout(fadeSaveAlert, '4000');
+    
+    
     var userNotes= document.getElementById('userNotes').innerHTML;
     userNotes = userNotes.replace(/;/g, "&#59");
 //    alert(userNotes);
     setCookie("notes", userNotes, 30);
+}
+
+function fadeSaveAlert()
+{
+    
+//    document.getElementById('saveAlert').innerHTML = "";
+    $('#saveAlert').fadeOut(1000);
 }
 
 

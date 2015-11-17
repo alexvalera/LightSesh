@@ -228,6 +228,11 @@ tr:hover {
   .saveButton:hover {
     background-color: white;
     color: #6C7A89; }
+  .saveButton:focus {
+    background-color: transparent;
+    color: white;
+    font-weight: 300;
+    border-color: white; }
 
 .lorem-block {
   display: none; }
@@ -358,6 +363,10 @@ tr:hover {
 .footer {
   width: 100%;
   background-color: transparent;
+  color: white; }
+
+#saveAlert {
+  padding-left: 10px;
   color: white; }
 
 /*# sourceMappingURL=style.css.map */

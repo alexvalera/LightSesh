@@ -384,6 +384,15 @@ cursor: pointer;
         background-color:white;
         color: $grey;
     }
+    &:focus
+    {
+    background-color:transparent;
+    color: white;
+    font-weight: $light;
+    border-color: white;
+   
+    }
+
     
 }
 
@@ -574,4 +583,10 @@ cursor: pointer;
     width:100%;
     background-color:transparent;
     color: white;
+}
+
+#saveAlert {
+    padding-left:10px;
+   
+    color:white;
 }
