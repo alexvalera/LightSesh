@@ -75,7 +75,7 @@ function saveNotes()
 //    alert("save button hit");
     $('#saveAlert').fadeIn(1000);
     document.getElementById('saveAlert').innerHTML = "Your notes have been saved.";
-    setTimeout(fadeSaveAlert, '4000');
+    setTimeout(fadeSaveAlert, '3000');
     
     
     var userNotes= document.getElementById('userNotes').innerHTML;
