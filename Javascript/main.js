@@ -10,7 +10,7 @@ var reviewSnd = new Audio("./Sounds/review.wav");
 var breakSnd = new Audio("./Sounds/break.wav"); 
 
 
-var seconds = 1799; //30 minutes
+var seconds = 1739; //30 minutes
 
 function count()
 {
